@@ -1,5 +1,7 @@
 package ca.ballgrabber.game;
 
+import gfx.SpriteSheet;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -21,6 +23,8 @@ public class Game extends Canvas implements Runnable {
     public int tickCount = 0;
     private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
     private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
+
+    private SpriteSheet spriteSheet = new SpriteSheet("/assets/sprite_sheet.png");
 
     public Game(){
         setMinimumSize(new Dimension(WIDTH* SCALE, HEIGHT*SCALE));
